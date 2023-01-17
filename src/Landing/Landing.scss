@@ -1,0 +1,454 @@
+@mixin font($f, $w, $s, $c) {
+  font-family: $f;
+  font-weight: $w;
+  font-size: $s;
+  color: $c;
+}
+
+$text-color: white;
+
+.hero {
+  min-height: 100vh;
+}
+.car_bg {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: -1;
+  img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+  }
+}
+.navigation {
+  z-index: 100;
+  padding: 20px 50px;
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      div {
+        background-color: #48dc52;
+        margin: 0%;
+        height: 1px;
+        width: 200px;
+        &::before {
+          content: "";
+          position: absolute;
+          background-color: #48dc52;
+          height: 5px;
+          width: 25px;
+          margin-top: -5px;
+        }
+      }
+
+      p {
+        margin: 0;
+        @include font("Mulish", 600, 2rem, $text-color);
+      }
+    }
+    button {
+      width: 127px;
+      // height: 30px;
+      background-color: #48dc52;
+      @include font("Mulish", 600, 14px, black);
+      border: 1px solid #48dc52;
+      text-transform: capitalize;
+      padding: 10px 0px;
+      cursor: pointer;
+    }
+  }
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+    .links {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      text-align: start;
+      width: 10%;
+      a {
+        @include font("Mulish", 500, 25px, $text-color);
+        margin: 5px 0px;
+        line-height: 35px;
+        cursor: pointer;
+        transition: 0.5s;
+        text-decoration: none;
+        &:hover {
+          color: #48dc52;
+        }
+      }
+    }
+    .name {
+      @include font("Mulish", 600, 64px, $text-color);
+      max-width: 542px;
+      text-align: start;
+      width: 50%;
+    }
+    .details {
+      display: flex;
+      justify-content: space-between;
+      width: 25%;
+      span {
+        display: flex;
+        flex-direction: column;
+        p:nth-child(1) {
+          @include font("Mulish", 500, 20px, $text-color);
+          margin: 5px 0px;
+        }
+        p:nth-child(2) {
+          @include font("Mulish", 400, 16px, $text-color);
+          margin: 5px 0px;
+        }
+      }
+    }
+  }
+}
+.scroll {
+  position: absolute;
+  bottom: 10px;
+  left: 0%;
+  right: 0%;
+  cursor: pointer;
+  p {
+    @include font("Mulish", 400, 16px, $text-color);
+    margin: 5px 0px;
+  }
+  img {
+    border: 1px solid #48dc52;
+    width: 15px;
+    padding: 15px 3px;
+    border-radius: 20px;
+  }
+}
+.about {
+  display: flex;
+  flex-direction: column;
+  margin: 50px;
+  .heading {
+    display: flex;
+    align-self: center;
+    max-width: 964px;
+    @include font("Mulish", 400, 48px, $text-color);
+    text-align: start;
+    margin-bottom: 100px;
+  }
+  .d-sec {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 100px;
+  }
+  .d-thi {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 100px;
+  }
+  .d-last {
+    align-items: flex-end;
+    margin-top: -100px;
+  }
+  .item-details {
+    display: flex;
+
+    .item_image {
+      overflow: hidden;
+      width: 60%;
+      height: 621px;
+      clip-path: polygon(0 0, 100% 0, 69% 100%, 0% 100%);
+      img {
+        height: 100%;
+      }
+    }
+    .last {
+      width: 35%;
+    }
+    .sec {
+      clip-path: polygon(37% 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    .item_text {
+      margin-top: 5px;
+      margin-left: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        div {
+          background-color: #48dc52;
+          margin: 0%;
+          height: 1px;
+          width: 200px;
+          &::before {
+            content: "";
+            position: absolute;
+            background-color: #48dc52;
+            height: 5px;
+            width: 25px;
+            margin-top: -5px;
+          }
+        }
+        .t_one {
+          margin: 0;
+          @include font("Mulish", 500, 20px, #48dc52);
+        }
+      }
+      .t_two {
+        @include font("Mulish", 400, 40px, white);
+        max-width: 181px;
+        text-align: start;
+      }
+      .t_sec {
+        max-width: 383px;
+      }
+      .t_thi {
+        max-width: 383px;
+      }
+      .t_three {
+        max-width: 519px;
+        @include font("Mulish", 400, 24px, white);
+        text-align: start;
+      }
+      .t_last {
+        max-width: 749px;
+        @include font("Mulish", 400, 24px, white);
+        text-align: start;
+      }
+    }
+  }
+
+  .car_point {
+    display: flex;
+    margin-top: 150px;
+    justify-content: space-between;
+    div {
+      p:nth-child(1) {
+        @include font("Mulish", 500, 32px, #48dc52);
+      }
+      p:nth-child(2) {
+        @include font("Mulish", 400, 24px, white);
+        max-width: 538px;
+      }
+    }
+  }
+  .line {
+    width: 100%;
+    height: 2px;
+    background-color: #48dc52;
+    margin: 50px 0px;
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: #48dc52;
+      height: 16px;
+      width: 228px;
+      margin-top: -16px;
+      left: 50px;
+    }
+  }
+}
+.spec {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 950px;
+  .spec_bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    img {
+      min-height: 100vh;
+      width: 100%;
+    }
+  }
+  .spec_t {
+    @include font("Mulish", 400, 40px, white);
+    width:calc(50% + 60px);
+    text-align: start;
+  }
+  .spec_detail {
+    width: 50%;
+    background: rgb(0, 0, 0,0.5);
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    div{
+      display: flex;
+      justify-content: space-between;
+      p{
+        @include font("Mulish", 400, 20px, white);
+        text-align: start;
+        width: 50%;
+        margin: 15px 0px 5px;
+      }
+    }
+    hr{
+      width: 100%;
+      height: 1px;
+      background-color: #48dc527c;
+      color: #48dc527c;
+      border: none;
+    }
+  }
+}
+
+.footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px 50px;
+  .footer_head{
+    display: inherit;
+    flex-direction: inherit;
+    align-items: inherit;
+    p:nth-child(1){
+      @include font("Mulish", 600, 56px, white);
+      margin: 10px 0px;
+    }
+    p:nth-child(2){
+      @include font("Mulish", 400, 24px, white);
+      text-align: center;
+      max-width: 793px;
+      margin: 5px;
+    }
+    button{
+      @include font("Mulish", 600, 24px, rgba(0, 0, 0, 0.803));
+      background-color: #48dc52;
+      border: 1px solid #48dc52;
+      cursor: pointer;
+      padding: 5px 20px;
+      margin: 20px 0px;
+    }
+  }
+
+  .line {
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    margin: 50px 0px;
+    margin-top: 100px;
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: #ffffff;
+      height: 16px;
+      width: 228px;
+      margin-top: -16px;
+      left: 50px;
+    }
+  }
+
+  .contact{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    .address{
+      p{
+        @include font("Mulish", 400, 20px, white);
+        max-width: 237px;
+        text-align: start;
+        display: flex;
+        align-items:baseline;
+        img{
+          width: 15px;
+          margin:0px 5px;
+        }
+      }
+    }
+    .links{
+      display: flex;
+      flex-direction: column;
+      a{
+        @include font("Mulish", 400, 20px, white);
+        text-align: start;
+        text-decoration: none;
+        margin:5px 0px;
+      }
+    }
+  }
+  .res{
+    @include font("Mulish", 400, 20px, white);
+  }
+}
+
+@media (max-width: 900px) {
+  .navigation .bottom .links {
+    display: none;
+  }
+  .navigation .bottom {
+    flex-direction: column;
+  }
+  .navigation .bottom .name {
+    width: 100%;
+    font-size: 85px;
+  }
+  .navigation .bottom .details {
+    width: 100%;
+    margin-top: 150px;
+  }
+  .navigation .top div p {
+    font-size: 1.5rem;
+  }
+  .navigation .top div div {
+    width: 150px;
+  }
+  .about .heading {
+    font-size: 25px;
+    text-align: center;
+  }
+  .about .d-last{
+    margin-top: 50px;
+  }
+  .about .car_point div p:nth-child(2){
+    text-align: center;
+    max-width: none;
+  }
+  .about .car_point{
+    flex-direction: column;
+  }
+  .footer .footer_head p:nth-child(1){
+    font-size: 32px;
+  }
+  .footer .footer_head p:nth-child(2){
+    text-align: justify;
+  }
+  .footer .contact{
+    flex-direction: column;
+  }
+  .footer .contact .links{
+    margin-top: 40px;
+  }
+  .footer .res{
+    text-align: start;
+    margin-top: 40px;
+  }
+  .spec .spec_detail{
+    width: auto;
+  }
+  .spec .spec_t{
+    padding: 30px;
+    display: block;
+  }
+  .car_bg{
+    overflow: hidden;
+    img{
+      width: auto;
+    }
+  }
+}
+
+@media (max-width:500px) {
+  .navigation .bottom .name{
+    font-size: 45px;
+  }
+}
